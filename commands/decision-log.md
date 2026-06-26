@@ -52,6 +52,17 @@ Verify:
 - Technical terms and acronyms are preserved exactly as stated
 - You have not elevated opinions to decisions or demoted decisions to proposals
 
+## Calibration: What Good Decision Logging Looks Like vs. What Bad Looks Like
+
+Bad: "We decided to use Postgres."
+Good: "Decision: Use Postgres over MongoDB. Rationale: the data model is highly relational, and the team has 4 engineers with deep SQL experience vs. 0 with MongoDB production experience. Decided by: Raj, with team consensus. Dissent: none. Implied work: migrate the existing MongoDB collections (owner TBD), update the Terraform configs (owner TBD), rewrite the data access layer (owner TBD)."
+
+Bad: "The team aligned on the timeline."
+Good: "Decision: Ship v2.1 by March 15 with a hard code freeze on March 10. Rationale: aligns with the partner launch window; slipping past March 20 voids the co-marketing agreement. Decided by: VP Eng (Paul). Dissent: Sara raised that integration tests are not passing on staging and a March 10 freeze is aggressive. Condition: revisit if test pass rate is below 90% by March 7."
+
+Bad: "We talked about the API approach."
+Good: "Proposal (not decided): Switch from REST to gRPC for inter-service communication. Proposed by: James. Status: open. Blocked on: Chen needs to benchmark latency gains vs. debugging complexity. Decision deferred to next architecture review on March 12."
+
 ## Anti-Patterns (DO NOT do these)
 
 - DO NOT log proposals or opinions as decisions. If the group did not align, it is not a decision.

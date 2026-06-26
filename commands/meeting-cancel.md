@@ -55,6 +55,20 @@ Verify:
 - No em dashes appear anywhere in the output
 - The tone is honest, practical, and backed by the math
 
+## Calibration: What an Honest Meeting Assessment Looks Like vs. What Bad Looks Like
+
+Bad verdict: "The meeting could potentially be more efficient."
+Good verdict: "This meeting costs $62,400/year. Twelve people sit in a room for an hour every week. Eight of them speak for less than 3 minutes total. The other four could get the same information from a 5-sentence Slack message. Cancel the meeting. Replace with a weekly async update in the team channel."
+
+Bad cost analysis: "The meeting takes some time."
+Good cost analysis: "8 people x 1 hour = 8 person-hours per occurrence. At $100/hour blended rate, that is $800/week, $41,600/year. That is equivalent to one engineer working full-time for 5 weeks per year, just on this meeting."
+
+Bad async alternative: "Send an email instead."
+Good async alternative: "Subject: Weekly Platform Update - June 26. Body: Three sections. (1) Status: Helm charts 70% done, targeting July 3. Monitoring stack selected: Prometheus. (2) Decisions needed: reply with your vote on the migration window by Thursday. Options: July 14-16 or July 21-23. (3) Blockers: DNS cutover has no owner. Reply to claim it. If no owner by Friday, I will escalate to the director. Escalation path: if we cannot align async by Thursday, I will schedule a focused 15-minute call with John and Sara only."
+
+Bad recommendation: "Consider making the meeting shorter."
+Good recommendation: "Cut this from 60 minutes to 25 minutes. Remove the round-robin updates (move to async). Keep only the two decision items. Drop attendees 5-8 (they are informed, not consulted). Saves 5.5 person-hours per week, $28,600/year."
+
 ## Anti-Patterns (DO NOT do these)
 
 - DO NOT default to "keep the meeting" to be safe. If it should be an email, say so. Being polite about waste is still waste.

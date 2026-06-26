@@ -51,6 +51,20 @@ Verify:
 - The action-item capture block is present and cannot be skipped
 - The meeting is not longer than it needs to be. If 25 minutes of content is being stretched into a 60-minute meeting, say so.
 
+## Calibration: What a Good Agenda Looks Like vs. What Bad Looks Like
+
+Bad agenda item: "Discuss the roadmap. (20 min)"
+Good agenda item: "Decide on top 3 priorities for Q3. Lead: Sarah. Success criterion: ranked list with an owner assigned to each priority. (15 min)"
+
+Bad purpose: "Review the architecture."
+Good purpose: "Approve or reject the proposed switch from polling to event-driven architecture. Raj presents the design doc (shared as pre-read). Group decides go/no-go. If no-go, Raj presents fallback option B."
+
+Bad pre-read: "Review the docs before the meeting."
+Good pre-read: "Read Raj's architecture proposal (link). Focus on Section 3: data flow between the ingestion service and the notification pipeline. Come prepared to answer: does this introduce a single point of failure at the message broker?"
+
+Bad success criterion: "Align on next steps."
+Good success criterion: "Leave with a signed-off migration timeline, an owner for each phase, and a rollback trigger defined (what metric threshold means we revert)."
+
 ## Anti-Patterns (DO NOT do these)
 
 - DO NOT create agenda items that say "discuss X" with no defined outcome. Every topic needs an action verb: decide, align, review, approve, prioritize, resolve.

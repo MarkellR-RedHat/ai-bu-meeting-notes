@@ -52,6 +52,20 @@ Verify:
 - Risk signals have been surfaced, not hidden
 - The Team Pulse section adds value beyond just restating the individual updates
 
+## Calibration: What Good Standup Formatting Looks Like vs. What Bad Looks Like
+
+Bad done item: "Worked on the API."
+Good done item: "Merged PR #412: added pagination to /users endpoint. Load test shows 3x improvement on page loads over 1k results."
+
+Bad doing item: "Will continue working on the migration."
+Good doing item: "Rewriting the data access layer for Postgres. Targeting 3 of 7 services today (auth, billing, notifications). Expect to hit the payments service tomorrow."
+
+Bad blocker: "Blocked."
+Good blocker: "Blocked on staging environment access. Submitted IT ticket #8823 two days ago, no response. Cannot run integration tests until this is resolved. Impact: delays the March 10 code freeze milestone."
+
+Bad team pulse: "The team is making solid progress."
+Good team pulse: "2 of 5 engineers blocked on the same staging access issue. This is a systemic blocker, not individual. Escalate to IT lead today. Sara's 'should be done by EOD' on the schema migration is the third consecutive standup with hedging language on this item. Treat as at-risk."
+
 ## Anti-Patterns (DO NOT do these)
 
 - DO NOT strip away useful context to make bullets shorter. "Fixed the flaky test" is less useful than "Fixed the flaky test in payments module (race condition with DB connection pool, see PR #847)"

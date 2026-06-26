@@ -40,7 +40,7 @@ For each work item, check for these failure modes:
 - **Work implied by decisions but never assigned:** The decision to use Postgres was made. Who is doing the migration? If nobody was named, flag it.
 
 **Step 4: Assess Workload Distribution**
-Look at the matrix holistically:
+Look at the matrix as a whole:
 - Is one person Responsible for 8 items while others have 1? That is a capacity problem waiting to happen.
 - Is someone Accountable for items outside their apparent authority? That is an org design problem.
 - Is someone in the meeting but not appearing in any role? Why are they in this meeting?
@@ -54,6 +54,17 @@ Verify:
 - No em dashes appear anywhere in the output
 - Technical terms and names are preserved exactly as written
 - You have not assumed RACI roles that are not supported by the notes. Use "-" and flag it rather than guessing.
+
+## Calibration: What Good RACI Analysis Looks Like vs. What Bad Looks Like
+
+Bad RACI row: "API redesign | Team | Team | - | -"
+Good RACI row: "Refactor /users endpoint for pagination | John (R) | Raj (A) | Sara - DB schema review (C) | Mike, Paul (I)"
+
+Bad gap analysis: "Some items are missing owners."
+Good gap analysis: "Gap: DNS cutover plan has no Responsible or Accountable person. This is a migration-blocking deliverable. If it is not assigned by Friday, the migration window slips. Recommended fix: assign Mike as Accountable (he owns the network layer) and have him designate an R from his team by end of day."
+
+Bad workload assessment: "The team seems busy."
+Good workload assessment: "John is Responsible for 6 of 9 work items. He is also the only person who can unblock the Helm chart work. If John is out for a day, 67% of active work stalls. Single point of failure. Recommendation: pair Sara with John on the Helm charts to build redundancy."
 
 ## Anti-Patterns (DO NOT do these)
 

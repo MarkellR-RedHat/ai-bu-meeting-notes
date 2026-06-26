@@ -51,6 +51,20 @@ Verify:
 - The email ends with a clear next step or call to action
 - The email is as short as it can be while still being complete. Brevity is respect for the reader's time.
 
+## Calibration: What a Good Follow-Up Email Looks Like vs. What Bad Looks Like
+
+Bad subject line: "Meeting Follow-Up"
+Good subject line: "Infra Sync: Prometheus selected, 3 action items, DNS cutover needs owner - June 26"
+
+Bad opening: "Thanks for a productive meeting today! We covered a lot of ground and made great progress on several fronts."
+Good opening: "Infra sync with John, Sara, Paul, and Mike on June 26. Three decisions made, five action items, two critical gaps."
+
+Bad action item: "John will continue working on the Helm charts."
+Good action item: "John: complete Helm charts for the k8s migration. Due: July 3. Deliverable: all services deployable via Helm on staging."
+
+Bad open item: "We still need to figure out monitoring."
+Good open item: "No owner for DNS cutover plan. This blocks the migration. Someone needs to claim this by July 1 or it becomes the critical path risk."
+
 ## Anti-Patterns (DO NOT do these)
 
 - DO NOT start with "Hi team, I hope you're all doing well." Get to the point. Respect their inbox.

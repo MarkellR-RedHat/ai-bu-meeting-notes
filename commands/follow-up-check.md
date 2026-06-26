@@ -68,6 +68,20 @@ A good accountability report should make a well-functioning team feel confident:
 
 A good accountability report should make a struggling team feel the weight of their pattern without feeling attacked: "3 of 7 items were never mentioned. This is the second consecutive meeting where more than 40% of commitments were not addressed. The team is taking on new commitments faster than it is completing old ones. Recommendation: freeze new work items until the backlog of open commitments is cleared."
 
+## Calibration: What a Good Accountability Report Looks Like vs. What Bad Looks Like
+
+Bad status: "The team made progress on several items."
+Good status: "2 of 6 commitments completed. 1 slipped with a new deadline. 3 were never mentioned. Follow-through rate: 33%."
+
+Bad slipped item: "The API docs are delayed."
+Good slipped item: "John committed to finishing API docs by Wednesday. Status: not done. Current estimate: 'maybe tomorrow' (not a commitment, it is a hedge). Days slipped: 4+. No firm new deadline set. This will drift until someone pins a date."
+
+Bad pattern analysis: "The team could improve follow-through."
+Good pattern analysis: "This is the second consecutive meeting where more than 40% of commitments were never mentioned. The team is adding new commitments faster than it is closing old ones. 3 new items were discussed before any of the 6 open items were reviewed. Recommendation: freeze new commitments until the open backlog drops below 3 items."
+
+Bad 'never mentioned' treatment: Listed at the bottom of the report with no urgency.
+Good 'never mentioned' treatment: Listed first, flagged as highest-risk category. "Mike's security review was committed to 10 days ago with a Friday deadline. It has not been mentioned in two meetings. It is either done and unreported (unlikely) or forgotten. Recommended action: Mike confirms status by end of day."
+
 ## Anti-Patterns (DO NOT do these)
 
 - DO NOT soften the report. If 8 out of 10 items were not addressed, say that clearly.

@@ -57,6 +57,20 @@ Verify:
 - No em dashes appear anywhere in the output
 - The brief is actionable, not just informational. The reader should know what to DO, not just what to know.
 
+## Calibration: What Good Pre-Brief Analysis Looks Like vs. What Bad Looks Like
+
+Bad attendee profile: "John cares about quality and will likely advocate for best practices."
+Good attendee profile: "John (platform lead) will push for more test coverage. His team took the blame for last month's 4-hour production outage caused by an untested config change. He needs a win on reliability. Expect him to resist any timeline that cuts testing short."
+
+Bad real agenda: "The meeting is about the Q3 roadmap."
+Good real agenda: "This meeting is about whether Sarah's team or Raj's team gets the two new headcount. The roadmap discussion is the vehicle for that negotiation. Watch for both leads framing their projects as higher priority to justify the allocation."
+
+Bad question suggestion: "Ask about the timeline."
+Good question suggestion: "Ask: 'If we commit to this March 15 deadline, what are we explicitly choosing NOT to ship in Q1?' This forces the group to name the tradeoff instead of pretending everything fits."
+
+Bad landmine: "There might be some disagreements."
+Good landmine: "Chen and James have been arguing about REST vs. gRPC in Slack for two weeks. If API design comes up, they will relitigate it. Mitigation: redirect to a focused architecture review with benchmarks. Do not let this consume the meeting."
+
 ## Anti-Patterns (DO NOT do these)
 
 - DO NOT provide generic advice like "be prepared to discuss the topic." That is worthless. Add real substance.
