@@ -9,7 +9,6 @@ COMMANDS_DIR="$HOME/.claude/commands"
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
-BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 BOLD='\033[1m'
 DIM='\033[2m'
@@ -17,8 +16,8 @@ NC='\033[0m'
 
 echo ""
 echo -e "${BOLD}${CYAN}ai-bu-meeting-notes${NC}"
-echo -e "${DIM}Claude Code slash commands for meeting productivity${NC}"
-echo "================================================="
+echo -e "${DIM}Close the gap between what gets said and what gets done${NC}"
+echo "======================================================"
 echo ""
 
 # Check if Claude Code commands directory exists or can be created
@@ -52,37 +51,39 @@ SKIPPED=0
 for cmd in "${COMMANDS[@]}"; do
   if [ -f "commands/${cmd}.md" ]; then
     cp "commands/${cmd}.md" "$COMMANDS_DIR/${cmd}.md"
-    echo -e "  ${GREEN}+${NC} ${cmd}"
+    echo -e "  ${GREEN}+${NC} /${cmd}"
     INSTALLED=$((INSTALLED + 1))
   else
-    echo -e "  ${RED}!${NC} ${cmd} ${DIM}(file not found, skipped)${NC}"
+    echo -e "  ${RED}!${NC} /${cmd} ${DIM}(source file not found, skipped)${NC}"
     SKIPPED=$((SKIPPED + 1))
   fi
 done
 
 echo ""
-echo -e "${GREEN}${BOLD}Installed ${INSTALLED} commands.${NC}"
+if [ "$INSTALLED" -gt 0 ]; then
+  echo -e "${GREEN}${BOLD}Installed ${INSTALLED} commands.${NC}"
+fi
 if [ "$SKIPPED" -gt 0 ]; then
-  echo -e "${YELLOW}Skipped ${SKIPPED} commands (files not found).${NC}"
+  echo -e "${YELLOW}Skipped ${SKIPPED} commands (source files not found).${NC}"
 fi
 
 echo ""
-echo -e "${BOLD}Available commands:${NC}"
+echo -e "${BOLD}Commands installed:${NC}"
 echo ""
 echo -e "  ${BOLD}Core${NC}"
-echo -e "  ${CYAN}/meeting-notes${NC}      Full structured meeting notes with decisions, actions, and follow-ups"
+echo -e "  ${CYAN}/meeting-notes${NC}      Full structured notes with accountability tracking"
 echo -e "  ${CYAN}/action-items${NC}       Extract every commitment, including the ones humans miss"
-echo -e "  ${CYAN}/decision-log${NC}       Pull decisions into a structured log with rationale and alternatives"
-echo -e "  ${CYAN}/meeting-email${NC}      Generate a copy-paste-ready follow-up email"
-echo -e "  ${CYAN}/standup-notes${NC}      Format async standup updates with team health pulse"
-echo -e "  ${CYAN}/agenda${NC}             Generate a time-boxed agenda with success criteria"
+echo -e "  ${CYAN}/decision-log${NC}       Decisions with rationale, alternatives, and dissent"
+echo -e "  ${CYAN}/meeting-email${NC}      Copy-paste-ready follow-up email"
+echo -e "  ${CYAN}/standup-notes${NC}      Async standup formatter with team health pulse"
+echo -e "  ${CYAN}/agenda${NC}             Time-boxed agenda with success criteria"
 echo ""
 echo -e "  ${BOLD}Advanced${NC}"
-echo -e "  ${CYAN}/pre-brief${NC}          Get a strategic briefing before your meeting"
-echo -e "  ${CYAN}/raci${NC}               Extract a RACI matrix and flag accountability gaps"
-echo -e "  ${CYAN}/follow-up-check${NC}    Compare meetings to track what shipped, slipped, or got dropped"
-echo -e "  ${CYAN}/meeting-cancel${NC}     Honest assessment: should this meeting be an email?"
+echo -e "  ${CYAN}/pre-brief${NC}          Strategic briefing: attendee map, power dynamics, landmines"
+echo -e "  ${CYAN}/raci${NC}               RACI matrix with accountability gap detection"
+echo -e "  ${CYAN}/follow-up-check${NC}    Cross-meeting accountability tracker"
+echo -e "  ${CYAN}/meeting-cancel${NC}     Should this meeting exist? Honest verdict with cost math"
 echo ""
-echo -e "${DIM}Usage: paste your rough notes after the command, e.g.:${NC}"
+echo -e "${DIM}Usage: type the slash command followed by your rough notes${NC}"
 echo -e "${DIM}  /meeting-notes talked about Q3 roadmap, john owns the API work due friday...${NC}"
 echo ""
