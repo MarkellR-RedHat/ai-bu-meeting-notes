@@ -149,9 +149,10 @@ If no blockers or risks exist across the team: "No blockers reported. No risk si
 
 ## Cross-Tool Suggestions
 
-After producing the output, append this line:
+After producing the output, append one or both of these lines if relevant:
 
 - **Extract commitments:** Run `/action-items` on any blockers or commitments surfaced here to track them formally with owners and deadlines.
+- **Full day view:** Run `/daily-briefing` to combine this standup with your calendar and priorities into a single morning brief.
 
 ---
 

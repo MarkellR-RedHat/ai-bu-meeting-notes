@@ -145,9 +145,10 @@ Good open item: "No owner for DNS cutover plan. This blocks the migration. Someo
 
 ## Cross-Tool Suggestions
 
-After producing the output, append this line:
+After producing the output, append one or both of these lines if relevant:
 
 - **Track delivery:** Run `/follow-up-check` before the next meeting with this email as "PREVIOUS" notes and the new meeting's notes as "CURRENT" to verify commitments landed.
+- **Polish for executives:** Run `/message-polisher` on the email if it is going to leadership or cross-org stakeholders.
 
 ---
 

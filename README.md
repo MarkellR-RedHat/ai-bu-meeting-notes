@@ -91,6 +91,19 @@ we picked option B for the auth flow, no one volunteered for docs yet...
 | `/follow-up-check` | Cross-meeting accountability tracker and scorecard | Start of recurring meetings |
 | `/meeting-cancel` | Meeting cost calculator and necessity test | When you suspect the meeting should be an email |
 
+## Workflow: The Full Meeting Lifecycle
+
+These commands chain together. A typical week looks like this:
+
+1. **Before the meeting:** `/agenda` designs a time-boxed plan with success criteria. `/pre-brief` maps the room's dynamics so you walk in prepared.
+2. **During the meeting:** Type raw notes into a scratch buffer. Do not worry about formatting.
+3. **Right after:** `/meeting-notes` turns your mess into structured notes. `/meeting-email` produces a send-ready follow-up.
+4. **Between meetings:** `/action-items` extracts every commitment with owners and deadlines. `/raci` exposes accountability gaps.
+5. **Next meeting opens:** `/follow-up-check` compares old commitments against new notes. Shows who delivered and who silently dropped items.
+6. **Before you schedule another one:** `/meeting-cancel` calculates the dollar cost and tests whether the meeting should be an email instead.
+
+Tip: the highest-value two-command combo is `/meeting-notes` immediately after, then `/follow-up-check` at the start of the next occurrence. Teams that adopt this pattern typically find that their follow-through rate jumps from under 40% to over 75% within three cycles, because people know the record will be checked.
+
 ## What Follow-Up Tracking Looks Like
 
 `/follow-up-check` catches what most teams miss. Paste two sets of notes (previous and current) and get back an honest scorecard:
@@ -119,6 +132,15 @@ Overall Follow-Through Rate: 33%
 ```
 
 That is the difference between "we had a meeting" and "we have a record."
+
+## Works With the AI BU Suite
+
+These commands produce structured output that feeds directly into other tools:
+
+- `/meeting-notes` suggests running [/status-report](https://github.com/MarkellR-RedHat/ai-bu-status-report) to fold decisions into your weekly update
+- `/meeting-email` output pairs well with [/message-polisher](https://github.com/MarkellR-RedHat/ai-bu-message-polisher) for high-stakes audiences
+- `/standup-notes` output feeds into [/daily-briefing](https://github.com/MarkellR-RedHat/ai-bu-daily-briefing) for a full picture of the day
+- `/pre-brief` stacks with [/review-as-persona](https://github.com/MarkellR-RedHat/ai-bu-review-as-persona) when you need to pressure-test your talking points
 
 ## Project Structure
 

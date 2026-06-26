@@ -175,9 +175,10 @@ In 2-3 sentences: what does "success" look like for the reader coming out of thi
 
 ## Cross-Tool Suggestions
 
-After producing the output, append this line:
+After producing the output, append one or both of these lines if relevant:
 
 - **Structure the meeting:** Run `/agenda` with this same context to build a time-boxed agenda that complements this strategic brief.
+- **Pressure-test your position:** Run `/review-as-persona` on your talking points to see how each attendee would react before you walk in.
 
 ---
 

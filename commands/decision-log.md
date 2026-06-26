@@ -142,9 +142,10 @@ If no decisions can be identified from the input:
 
 ## Cross-Tool Suggestions
 
-After producing the output, append this line:
+After producing the output, append one or both of these lines if relevant:
 
 - **Share the record:** Run `/meeting-email` on these same notes to generate a follow-up email that locks in these decisions with the team.
+- **Weekly update:** Run `/status-report` to include these decisions in your weekly status report so leadership sees what was resolved.
 
 ---
 
