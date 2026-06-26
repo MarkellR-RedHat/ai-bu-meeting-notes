@@ -82,6 +82,30 @@ Verify:
 - DO NOT invent last names or change domain-specific terminology
 - DO NOT assume someone's commitment is firm if they hedged. Note the hedge.
 
+## Edge Case Handling
+
+**Sparse input (a few bullet points or one-liners):**
+- Extract what is there, even if it is only one or two items. Do not pad.
+- If the input is so thin that no commitments can be extracted, say so: "No actionable commitments found in these notes. Either the meeting produced no tasks, or the notes do not capture what was discussed. Re-run with more detailed notes if available."
+- Still produce the Quick Stats section even for sparse input. Showing "Total action items: 1" is informative.
+
+**Dense input (multi-page transcript or detailed notes):**
+- Group action items by workstream or topic when there are more than 10 items.
+- Add a priority summary at the top: "X high-priority items require attention this week."
+- Look harder for implicit commitments buried in long discussions. Dense notes hide more soft commitments.
+
+**No action items identified:**
+- This is a problem. State it clearly: "This meeting produced no commitments. No one agreed to do anything specific. Either the meeting was purely informational, or commitments were made but not captured in these notes. If this was supposed to be a working meeting, that is a failure worth addressing."
+
+**One person owns everything:**
+- If one person owns more than 60% of extracted items, add a dedicated callout: "Single-owner concentration: [Name] owns [X] of [Y] items. This creates a bottleneck and a bus-factor risk. Redistribute before the next meeting."
+
+**No deadlines on any items:**
+- If every extracted item has a TBD deadline, flag the pattern: "Zero items have deadlines. Without dates, none of these will be tracked against a timeline. Assign deadlines to at least the high-priority items before end of day."
+
+**Recurring meeting context:**
+- If the notes reference a recurring meeting, add to Accountability Gaps: "Since this is a recurring meeting, compare these items against last session's commitments using `/follow-up-check` to catch anything that was silently dropped."
+
 ## Input Handling
 
 - Handle messy input: typos, incomplete sentences, abbreviations, stream-of-consciousness
@@ -111,6 +135,14 @@ Flag any items where the commitment was soft or hedged:
 - Items with deadlines: [count] / Items needing dates: [count]
 - High priority items: [count]
 - Items with dependencies: [count]
+
+---
+
+## Cross-Tool Suggestions
+
+After producing the output, append this line:
+
+- **Track completion:** Run `/follow-up-check` in a week with these notes as the "PREVIOUS" input and your next meeting's notes as "CURRENT" to verify these commitments were delivered.
 
 ---
 

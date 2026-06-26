@@ -74,6 +74,29 @@ Good success criterion: "Leave with a signed-off migration timeline, an owner fo
 - DO NOT ignore the meeting type. A brainstorm needs different structure than a decision meeting. A status update should not be structured like a workshop.
 - DO NOT accept "we'll figure it out in the meeting" as a plan for any agenda item. That is how meetings become two hours long.
 
+## Edge Case Handling
+
+**Sparse input (just a topic and a couple of names):**
+- Build a minimal but complete agenda. Even "discuss the migration with John and Sara" becomes a structured 30-minute agenda with a purpose, success criterion, and wrap-up block.
+- Do not over-engineer. If the input suggests a quick sync, produce a tight 15-20 minute agenda, not a 60-minute production.
+- Note what you inferred: "Based on limited input, I assumed this is a [type] meeting. Provide more context for a sharper agenda."
+
+**Dense input (detailed topic list, many attendees, long duration):**
+- Be aggressive about prioritization. If there are 12 topics for a 60-minute meeting, name the ones that should be cut or moved to async.
+- Build in explicit time checks: "At the 30-minute mark, the facilitator checks: are we on track to cover items 4-6? If not, move items 5-6 to async."
+- Consider splitting into two meetings if the content genuinely requires more than 60 minutes. Say so.
+
+**No clear purpose or decision to be made:**
+- Challenge it: "Based on this input, the meeting has no clear decision or deliverable. Consider whether this should be: (a) an email with a response deadline, (b) a shared document with async comments, or (c) a shorter meeting with a specific question to answer."
+- Still produce the agenda if asked, but front-load the Minimum Viable Outcome with a question: "What does this meeting need to produce that cannot be achieved async?"
+
+**Only one attendee (1:1 meeting):**
+- Adjust the format for a 1:1: skip the facilitator role, reduce the wrap-up block, and focus on the relationship and coaching aspects if applicable.
+- Suggest concrete talking points rather than formal agenda items.
+
+**Recurring meeting with no stated agenda:**
+- Flag it: "This appears to be a recurring meeting with no specific agenda for this occurrence. Recurring meetings without a fresh agenda for each session become rituals instead of working sessions. Consider running `/meeting-cancel` to assess whether this occurrence is necessary."
+
 ## Input Handling
 
 - Handle messy input: typos, incomplete sentences, abbreviations, stream-of-consciousness
@@ -126,6 +149,14 @@ Numbered list of specific, measurable outcomes:
 - **Non-negotiable items (do not cut):** [list]
 - **Items that can move to async follow-up:** [list]
 - **Fallback plan:** [e.g., "If we cannot reach a decision on item 2, schedule a focused 15-minute follow-up with [names] only"]
+
+---
+
+## Cross-Tool Suggestions
+
+After producing the output, append this line:
+
+- **Walk in prepared:** Run `/pre-brief` with the attendee list and meeting topic to map the room's dynamics and prepare strategic questions.
 
 ---
 

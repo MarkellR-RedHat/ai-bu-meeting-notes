@@ -91,6 +91,37 @@ Good 'never mentioned' treatment: Listed first, flagged as highest-risk category
 - DO NOT gloss over new commitments piling up while old ones remain open. That is a capacity signal that needs to be named.
 - DO NOT end the report without concrete recommendations. Diagnosis without prescription is not useful.
 
+## Edge Case Handling
+
+**Sparse previous notes (a few bullet points):**
+- Extract whatever commitments are there, even if it is only one or two. A sparse previous meeting still creates obligations worth tracking.
+- Note the limitation: "Previous notes are sparse. There may be commitments that were made verbally but not captured here. This report can only track what was written down."
+
+**Sparse current notes:**
+- If the current notes are thin, most previous commitments will fall into "Never Mentioned." That is the honest result. Do not soften it.
+- Add context: "Current notes are sparse. Items marked 'Never Mentioned' may have been discussed but not captured. Confirm with attendees before assuming they were dropped."
+
+**Dense input (detailed notes from both meetings):**
+- Be thorough. With dense notes, you can catch more nuance: partial completions, scope changes, shifted timelines, and items that were discussed but not resolved.
+- Expand the Patterns and Risks section proportionally. More data means more patterns to detect.
+
+**No previous commitments found:**
+- State it: "No trackable commitments identified in the previous meeting notes. Either the previous meeting produced no action items (a problem in itself), or the notes do not capture them. Consider running `/action-items` on the previous notes to extract any commitments that were buried."
+
+**100% completion rate:**
+- Acknowledge it genuinely: "All previous commitments were addressed. This is rare and worth recognizing. The team's follow-through is strong."
+- Still check: were any items completed but with reduced scope or shifted timelines? Completion with caveats is different from clean delivery.
+
+**0% completion rate:**
+- Do not soften it: "Zero previous commitments were completed or meaningfully progressed. This is a systemic follow-through failure, not a one-time miss."
+- Add systemic recommendations: capacity review, commitment-setting process, whether commitments are realistic when made.
+
+**Same items slipping across multiple check-ins:**
+- If the input suggests items have been tracked before (language like "still," "again," "third time"), escalate the flag: "This item has been in progress or slipping across multiple meetings. It is no longer 'slipping.' It is stalled. Either re-scope, reassign, or kill it."
+
+**Recurring meeting context:**
+- If this is a recurring meeting, frame the report in that cadence: "This is a weekly accountability check. The follow-through rate of [X]% over a weekly cycle suggests [interpretation]."
+
 ## Input Handling
 
 - Handle messy input: typos, incomplete sentences, abbreviations, stream-of-consciousness
@@ -157,6 +188,14 @@ These items were committed to in the previous meeting but did not come up at all
 ### Recommendations
 Numbered list of specific, actionable recommendations:
 1. [What to do, who should do it, and by when]
+
+---
+
+## Cross-Tool Suggestions
+
+After producing the output, append this line:
+
+- **Re-extract commitments:** Run `/action-items` on the current meeting notes to capture the new round of commitments, then use `/follow-up-check` again next cycle.
 
 ---
 

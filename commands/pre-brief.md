@@ -80,6 +80,33 @@ Good landmine: "Chen and James have been arguing about REST vs. gRPC in Slack fo
 - DO NOT pretend the meeting exists in a vacuum. Consider what happened before this meeting and what needs to happen after it.
 - DO NOT be naive about motivations. People attend meetings to advance their interests. That is not cynical; it is human. Help the reader navigate it.
 
+## Edge Case Handling
+
+**Sparse input (just a topic and a couple of names):**
+- Produce a focused brief based on what you can infer. State your assumptions explicitly: "Working from limited context. The following is based on inferred roles and likely dynamics."
+- Focus on the strategic questions section, since those are useful regardless of how much background you have.
+- Note what would sharpen the brief: "Provide attendee roles, the meeting's backstory, or any known tensions for a more targeted briefing."
+
+**Dense input (full context with history, attendee backgrounds, and organizational dynamics):**
+- Go deep on the Attendee Map. With rich context, each profile should be a full strategic read, not a surface-level guess.
+- Expand the Potential Landmines section. More context means more specific traps to identify.
+- Add a "Backstory" section before the Attendee Map summarizing the relevant history.
+
+**Only one other attendee (1:1 meeting):**
+- Adjust the brief for a 1:1: skip the Power Map, focus on the relationship dynamic, and frame the questions around the specific person's motivations and likely positions.
+- Consider the power dynamic: is this a peer, a skip-level, a report, or an external stakeholder? Each requires a different approach.
+
+**No attendee list provided:**
+- You cannot profile people you do not know about. Focus on the topic analysis, strategic questions, and likely dynamics based on the meeting type.
+- State: "No attendees provided. Add names and roles for a targeted attendee map with strategic profiles."
+
+**Meeting with people you know nothing about (no roles, no context):**
+- Be honest about the limits: "These profiles are based on inferred roles from the meeting topic. They may be off. Update with actual context for sharper reads."
+- Focus on what you CAN do: topic analysis, strategic questions, and general power dynamics for the meeting type.
+
+**Recurring meeting context:**
+- Factor in the recurring dynamic: "This is a recurring meeting, which means relationships and positions have established patterns. Watch for: (1) topics that get relitigated every session, (2) alliances that have solidified, (3) people who have checked out because nothing changes."
+
 ## Input Handling
 
 - Handle messy input: typos, incomplete sentences, abbreviations, stream-of-consciousness
@@ -143,6 +170,14 @@ Things the reader should look up or have at their fingertips before the meeting:
 ### Your Ideal Outcome
 
 In 2-3 sentences: what does "success" look like for the reader coming out of this meeting? What do you want to have decided, learned, or set in motion? What is the minimum acceptable outcome versus the best-case scenario?
+
+---
+
+## Cross-Tool Suggestions
+
+After producing the output, append this line:
+
+- **Structure the meeting:** Run `/agenda` with this same context to build a time-boxed agenda that complements this strategic brief.
 
 ---
 

@@ -72,6 +72,28 @@ Good: "Proposal (not decided): Switch from REST to gRPC for inter-service commun
 - DO NOT miss the implied work. Every decision creates downstream tasks. If those tasks were not assigned, flag them.
 - DO NOT treat silence as consensus without noting it. If a decision was made because nobody objected, note that. It is different from active agreement.
 
+## Edge Case Handling
+
+**Sparse input (a few bullet points or one-liners):**
+- If only one or two decisions can be extracted, produce a compact log. Do not pad with invented decisions.
+- If the input is too thin to identify any decisions, state: "No confirmed decisions identified from these notes. The input may be too sparse to determine whether decisions were made. Re-run with more detailed notes if available."
+- Still produce the Decision Count section even for minimal input.
+
+**Dense input (multi-page transcript or detailed notes):**
+- Group decisions by topic or workstream when there are more than 6 decisions.
+- Pay extra attention to implicit and negative decisions buried in long discussions. Dense transcripts hide more "default decisions" where the group moved forward without explicitly stating a choice.
+- Expand the Implied Work section proportionally. More decisions means more downstream work.
+
+**No decisions were made:**
+- State this explicitly: "No confirmed decisions identified. The following proposals were discussed but not finalized: [list them, or state 'None identified' if the input contains no decision-adjacent content]."
+- Add context: "A meeting that discusses topics without reaching conclusions may indicate missing decision-makers, insufficient data, or unclear authority. Consider whether this meeting needs a different attendee list or better pre-reads to enable decisions."
+
+**All decisions made by one person:**
+- Flag the pattern: "All [X] decisions in this meeting were made by [Name]. This may be appropriate if [Name] is the designated decision-maker, but if this is supposed to be a collaborative process, the concentration is worth examining."
+
+**Recurring meeting context:**
+- If the notes reference a recurring meeting, check whether any decisions reverse or modify previous decisions and note the change: "This decision supersedes the [date] decision to [previous decision]. Update any downstream work accordingly."
+
 ## Input Handling
 
 - Handle messy input: typos, incomplete sentences, abbreviations, stream-of-consciousness
@@ -115,6 +137,14 @@ List any topics that were discussed but not resolved:
 
 If no decisions can be identified from the input:
 "No confirmed decisions identified. The following proposals were discussed but not finalized: [list them, or state 'None identified' if the input contains no decision-adjacent content]. This meeting may have been informational only, or decisions may have been made implicitly without being stated clearly."
+
+---
+
+## Cross-Tool Suggestions
+
+After producing the output, append this line:
+
+- **Share the record:** Run `/meeting-email` on these same notes to generate a follow-up email that locks in these decisions with the team.
 
 ---
 

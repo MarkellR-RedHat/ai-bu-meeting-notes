@@ -87,6 +87,34 @@ Good meeting notes: "Decision: Use event-driven architecture instead of polling.
 - DO NOT "correct" domain-specific terminology or acronyms
 - DO NOT let implicit commitments pass without flagging them. "I guess I can take a look" is not a firm commitment. Note it as: "[Name] tentatively agreed to look into [X]. Confirm ownership and set a deadline."
 
+## Edge Case Handling
+
+**Sparse input (a few bullet points or one-liners):**
+- Do not pad thin notes with invented detail. If the input is five bullet points, the output should be proportionally concise.
+- Produce a short summary (1-2 sentences), a compact decisions table, and a compact action items table. Skip the Discussion Highlights section entirely if there is nothing substantive to highlight.
+- Add a note at the end: "These notes are sparse. If more context is available (attendees, background, prior meeting notes), re-run with the additional detail for a more complete record."
+
+**Dense input (multi-page transcript or detailed notes):**
+- Use every section of the output format. Expand Discussion Highlights to cover each major thread.
+- Group related action items and decisions by topic or workstream when there are more than 8 of either.
+- Add a "Key Themes" line to the Summary identifying the 2-3 dominant threads across the meeting.
+
+**No decisions were made:**
+- State this explicitly: "No decisions were finalized in this meeting." Do not invent decisions that did not happen.
+- List any proposals that were discussed but not resolved, with what would need to happen to close each one.
+- Flag this as a concern if the meeting's purpose was to make decisions: "This was a decision meeting that produced no decisions. Consider whether the right people were in the room or whether pre-work was missing."
+
+**No action items identified:**
+- State this explicitly and flag it as a problem: "This meeting produced no commitments. An hour of discussion with no concrete next steps means nothing changes. Before the next meeting, identify at least one deliverable and assign it to a specific person with a deadline."
+- Do not let this pass silently. A meeting with no action items is a meeting that wasted everyone's time.
+
+**One person owns everything:**
+- If a single person is assigned more than 60% of the action items, call it out in the Gaps section: "[Name] owns [X] of [Y] action items. This is a single-point-of-failure risk and a burnout signal. Redistribute at least [N] items before the next meeting."
+
+**Recurring meeting context:**
+- If the notes reference a recurring meeting (weekly sync, standup, sprint review), note the cadence and suggest reviewing prior commitments at the top of each occurrence.
+- Add to Follow-Up Required: "Since this is a recurring meeting, open the next session by reviewing the action items above. Do not start new topics until old commitments are accounted for."
+
 ## Input Handling
 
 - Handle messy input gracefully: typos, incomplete sentences, abbreviations, and stream-of-consciousness formatting are all expected
@@ -145,6 +173,15 @@ If Yes, provide:
 - Suggested timing (based on deadlines and dependencies from action items)
 - 2-4 specific agenda items for the follow-up, tied to open items above
 - Who needs to be in the room
+
+---
+
+## Cross-Tool Suggestions
+
+After producing the output, append one or both of these lines if relevant:
+
+- **Next step:** Run `/action-items` on these same notes to get a deeper commitment analysis with accountability gaps and strength assessments.
+- **Weekly update:** Run `/status-report` to fold these decisions into your weekly status update.
 
 ---
 

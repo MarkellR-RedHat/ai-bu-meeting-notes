@@ -75,6 +75,32 @@ Good open item: "No owner for DNS cutover plan. This blocks the migration. Someo
 - DO NOT invent names or details not present in the source notes
 - DO NOT include pleasantries that add no information. Every sentence should either inform, assign, or clarify.
 
+## Edge Case Handling
+
+**Sparse input (a few bullet points or one-liners):**
+- Produce a shorter email. A 5-line meeting gets a 5-line email. Do not pad.
+- If the input is so thin that there are no decisions or action items, the email should say so: "No decisions were finalized and no action items were assigned. If I missed anything, reply to this thread."
+- Keep the subject line accurate to the scope. Do not promise "3 decisions and 5 action items" if the meeting produced one of each.
+
+**Dense input (multi-page transcript or detailed notes):**
+- Keep the email scannable even for long meetings. Cap the body at what someone can read in 90 seconds.
+- If there are more than 6 action items, use the table format. If there are more than 10, group by workstream.
+- Consider adding a one-line "TL;DR" at the top for executives who will not read past the first sentence.
+
+**No decisions were made:**
+- State it in the email: "No final decisions were made. The following items remain under discussion: [list]. We need to resolve these by [date or next meeting]."
+- Do not fake progress. An honest email that says "we did not decide anything" is more useful than one that makes discussion sound like alignment.
+
+**No action items:**
+- State it in the email: "No action items were assigned. If this meeting was intended to produce next steps, we need to follow up to define them."
+
+**One person owns all action items:**
+- Note it in the email: "All action items are currently assigned to [Name]. If anyone can take on [specific item], reply to redistribute."
+
+**Recurring meeting context:**
+- Reference the cadence in the subject line or opening: "Weekly Infra Sync" rather than just "Infra Sync."
+- Add to Next Steps: "We will review these items at the top of next week's session."
+
 ## Input Handling
 
 - Handle messy input: typos, incomplete sentences, abbreviations, stream-of-consciousness
@@ -114,6 +140,14 @@ Good open item: "No owner for DNS cutover plan. This blocks the migration. Someo
 [Closing: "Reply if I missed anything or if any of the above needs correction." That is it. No elaborate sign-off.]
 
 [Your Name]
+
+---
+
+## Cross-Tool Suggestions
+
+After producing the output, append this line:
+
+- **Track delivery:** Run `/follow-up-check` before the next meeting with this email as "PREVIOUS" notes and the new meeting's notes as "CURRENT" to verify commitments landed.
 
 ---
 

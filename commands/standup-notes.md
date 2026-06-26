@@ -74,6 +74,30 @@ Good team pulse: "2 of 5 engineers blocked on the same staging access issue. Thi
 - DO NOT ignore signals of risk buried in updates ("should be fine", "hopefully done by", "if nothing else comes up"). These are early warning signals. Surface them.
 - DO NOT produce a Team Pulse section that just says "everything looks good" if there are blockers. Be honest about the team's status.
 
+## Edge Case Handling
+
+**Sparse input (one person, a couple of lines):**
+- Format what is there. Even "worked on X, doing Y" becomes a clean Done/Doing/Blockers breakdown.
+- Skip the Team Pulse section entirely if there is only one person and no cross-team signals. A single-person standup does not need a team health assessment.
+- If the input is a single line like "nothing to report," output: "[Name]: No updates reported. If this person is between tasks, confirm their next assignment. If they are stuck, this is a silent blocker."
+
+**Dense input (10+ people, detailed updates):**
+- Group people by team or workstream if team affiliations are apparent.
+- Expand the Team Pulse section proportionally. With 10+ people, cross-dependencies and systemic blockers become more likely and more important to surface.
+- Add a "Summary for Leadership" line at the top: one sentence on team velocity and the most critical blocker.
+
+**No blockers reported by anyone:**
+- In the Team Pulse, acknowledge it but do not assume everything is fine: "No blockers reported. If this is accurate, the team is in a healthy state. If this is a standup where people avoid raising blockers, that is a cultural problem worth addressing."
+
+**One person blocked, everyone else clear:**
+- Call it out in Team Pulse: "[Name] is the only person reporting a blocker. Check whether their blocker affects anyone else's work downstream."
+
+**Same "doing" items appearing repeatedly (stall signal):**
+- If the input references items that sound like they have been in progress for a while ("still working on," "continuing with," "back to the migration again"), flag them aggressively in the Stall Watch section.
+
+**Recurring standup context:**
+- If the input references a daily or weekly standup cadence, note any items that sound like carryover from previous standups as potential stall risks.
+
 ## Input Handling
 
 - Handle messy input: typos, incomplete sentences, abbreviations, stream-of-consciousness
@@ -120,6 +144,14 @@ For each blocker across the team:
 - [Any items that appear to have been "in progress" for an unusually long time, based on language like "still working on" or "continuing with"]
 
 If no blockers or risks exist across the team: "No blockers reported. No risk signals detected. All work streams appear on track."
+
+---
+
+## Cross-Tool Suggestions
+
+After producing the output, append this line:
+
+- **Extract commitments:** Run `/action-items` on any blockers or commitments surfaced here to track them formally with owners and deadlines.
 
 ---
 
