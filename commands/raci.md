@@ -75,6 +75,31 @@ Good workload assessment: "John is Responsible for 6 of 9 work items. He is also
 - DO NOT fill in RACI roles that are not supported by the notes. Use "-" for roles where no one was identified, and flag it as a gap.
 - DO NOT produce a matrix with no gaps flagged and call it done. Every meeting has gaps. If you did not find any, you did not look hard enough.
 
+## Edge Case Handling
+
+**Sparse input (a few bullet points or one-liners):**
+- Extract what RACI mapping you can, even from minimal notes. A single action item still gets a row in the matrix.
+- If the input is too thin to identify any work items, state: "No work items identified from these notes. Either the meeting produced no assignments, or the notes do not capture them. Re-run with more detailed notes if available."
+- Still produce the Summary section even for sparse input. Showing "Total work items mapped: 1" is informative.
+
+**Dense input (multi-page transcript or detailed notes):**
+- Group work items by workstream or project when there are more than 8 items. A 40-row RACI matrix is unreadable.
+- Add a critical-gaps summary at the top: "X items have no Accountable person. These are the highest-risk items."
+- Dig harder for implied work. Dense notes hide more decisions-without-assignments than sparse notes.
+
+**No work items identified:**
+- State this explicitly: "No work items, deliverables, or action items identified in these notes. Either this meeting produced no assignments, or the notes do not capture them."
+- Flag the concern: "A meeting that discusses topics without assigning work produces no accountability. Consider whether pre-work or a clearer agenda would have driven assignments."
+
+**One person owns everything:**
+- If a single person appears as Responsible for more than 60% of items, add a dedicated callout in the Workload Distribution section: "Single-owner concentration: [Name] is Responsible for [X] of [Y] items. This is a bottleneck risk and a bus-factor problem. Redistribute before the next meeting."
+
+**No Accountable person on any item:**
+- If every row in the Accountable column is "-", escalate the finding: "Zero items have an Accountable person. This means nobody's name is on the line for any deliverable. Every item in this matrix will drift without someone answering for the outcome."
+
+**Recurring meeting context:**
+- If the notes reference a recurring meeting, add to the gap analysis: "Since this is a recurring meeting, compare this RACI against previous sessions using `/follow-up-check` to catch items where accountability was assigned but follow-through never happened."
+
 ## Input Handling
 
 - Handle messy input: typos, incomplete sentences, abbreviations, stream-of-consciousness
@@ -119,6 +144,14 @@ Flag if any person is:
 - Items with critical gaps (missing R or A): [count]
 - Total gaps requiring immediate assignment: [count]
 - Most overloaded person: [name] with [count] Responsible items
+
+---
+
+## Cross-Tool Suggestions
+
+After producing the output, append this line:
+
+- **Close the gaps:** Run `/action-items` on these same notes to extract commitments with deadlines, then use `/follow-up-check` next cycle to verify the RACI gaps were filled.
 
 ---
 
